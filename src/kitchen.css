@@ -1,0 +1,192 @@
+.kitchen {
+  position: relative;
+  isolation: isolate;
+  overflow: clip visible;
+  z-index: 1;
+  display: grid;
+  grid-template-rows: auto minmax(15vw, 1fr);
+  min-height: 48.4vw;
+  padding: 3.7vw 2.8vw 5.5vw 8.1vw;
+  color: #f0dfbf;
+  background: var(--section-bg);
+  scroll-margin-top: var(--header-height);
+}
+.kitchen::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: url("/images/hero/layers/01-wall.webp") left center / cover no-repeat;
+  opacity: .32;
+  mask-image: linear-gradient(transparent, black 14%, black 80%, transparent);
+  pointer-events: none;
+}
+.kitchen::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 13.2vw;
+  aspect-ratio: 169 / 244;
+  background: url("/images/kitchen/foreground-leaves.webp") left bottom / contain no-repeat;
+  mask-image: linear-gradient(black 74%, transparent 99%);
+  pointer-events: none;
+}
+.kitchen-copy {
+  position: relative;
+  z-index: 1;
+  width: 29.4vw;
+}
+.kitchen-kicker { gap: .85em; letter-spacing: .035em; }
+.kitchen-kicker::before { width: 1.6em; }
+.kitchen h2 {
+  position: relative;
+  width: max-content;
+  margin: .12em 0 .48em;
+  font: bold clamp(3.5rem, 6.5vw, 10rem)/.96 var(--serif);
+}
+.kitchen h2::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  width: 67%;
+  aspect-ratio: 160 / 25;
+  left: 64%;
+  bottom: -.16em;
+  background: url("/images/kitchen/title-stroke.webp") center / contain no-repeat;
+}
+.kitchen-description {
+  scroll-margin-top: calc(var(--header-height) + 1rem);
+  color: #dfd0b6;
+  font-size: clamp(.95rem, 1.32vw, 2rem);
+  line-height: 1.24;
+}
+.kitchen-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .75rem 2.9vw;
+  margin-top: 1.8vw;
+  font-size: clamp(.8rem, 1.03vw, 1.5rem);
+}
+.kitchen-actions .button {
+  min-width: 17.2vw;
+  min-height: max(2.5rem, 3.1vw);
+  padding: .65em 1.2em;
+  gap: .45em;
+  border-radius: .5em;
+  letter-spacing: 0;
+}
+.kitchen-actions a:not(.button) {
+  padding: .55em 0 .4em;
+  border-bottom: 1px solid #9c7848;
+  font-weight: 600;
+}
+.kitchen-actions a:hover { color: var(--amber); }
+.kitchen-gallery { position: absolute; inset: 0; }
+.kitchen-photo {
+  position: absolute;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid #80603c;
+  border-radius: 2.4vw;
+  background: #1a120b;
+}
+.kitchen-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.kitchen-main-photo {
+  left: 39.5%;
+  top: 4.4vw;
+  width: 59%;
+  aspect-ratio: 1.96;
+  transform: rotate(4deg) skewX(-4deg);
+}
+.kitchen-main-photo img { transform: skewX(4deg) rotate(-4deg) scale(1.15); }
+.kitchen-burger {
+  left: 6%;
+  bottom: 3.45vw;
+  width: 26.3%;
+  height: 14.45vw;
+  border-radius: 2vw;
+  transform: perspective(42vw) rotateX(18deg) rotateY(-12deg) rotate(.5deg);
+}
+.kitchen-salad {
+  left: 34%;
+  bottom: 2.65vw;
+  width: 21%;
+  height: 15.9vw;
+  border-radius: 1.8vw;
+  transform: perspective(42vw) rotateX(-13deg) rotateY(-13deg) rotate(-1.6deg);
+}
+.kitchen-categories {
+  position: relative;
+  isolation: isolate;
+  align-self: end;
+  justify-self: end;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font: bold clamp(1rem, 1.46vw, 2.3rem)/1.2 var(--serif);
+}
+.kitchen-categories::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -4.9vw -1.9vw -4.1vw -2.9vw;
+  background: url("/images/kitchen/category-brush-hd.webp") center / 100% 100% no-repeat;
+  mask-image: linear-gradient(transparent 4%, black 19% 87%, transparent);
+  pointer-events: none;
+}
+.kitchen-categories a { display: block; padding: .5em 2.05vw; }
+.kitchen-categories a:hover { color: var(--amber); }
+.kitchen-categories li + li { border-left: 1px solid #4b3520; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .kitchen-burger img, .kitchen-salad img { transition: scale .45s ease-out; }
+  .kitchen-burger:hover img, .kitchen-salad:hover img { scale: 1.025; }
+}
+@media (56rem < width <= 64rem) {
+  .kitchen { min-height: 54vw; padding-left: 5vw; }
+  .kitchen-copy { width: 33vw; }
+  .kitchen-categories a { padding-inline: 1.5vw; }
+  .kitchen-categories::before { left: -1.5vw; }
+}
+@media (width <= 56rem) {
+  .kitchen {
+    min-height: auto;
+    grid-template-rows: auto auto auto;
+    padding: 2.25rem var(--gutter) 2.75rem;
+    gap: 1.5rem;
+  }
+  .kitchen-copy { width: auto; max-width: 34rem; }
+  .kitchen h2 { font-size: clamp(3.6rem, 11vw, 5rem); }
+  .kitchen-description { font-size: 1rem; line-height: 1.4; }
+  .kitchen-actions { gap: 1.5rem; margin-top: 1.25rem; }
+  .kitchen-actions .button { min-height: 44px; min-width: 11rem; }
+  .kitchen-gallery { position: relative; inset: auto; aspect-ratio: 1.4; }
+  .kitchen-main-photo {
+    left: 6%;
+    top: 3%;
+    width: 93%;
+    height: 70%;
+    border: 1px solid #80603c;
+    border-radius: 1.3rem;
+    transform: rotate(3deg) skewX(-4deg);
+  }
+  .kitchen-main-photo img { transform: skewX(4deg) rotate(-3deg) scale(1.1); }
+  .kitchen-burger { left: 1%; bottom: 2%; width: 49%; height: 37%; }
+  .kitchen-salad { left: 53%; bottom: 0; width: 40%; height: 40%; }
+  .kitchen-burger, .kitchen-salad { border-radius: .9rem; }
+  .kitchen-categories { justify-self: stretch; display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; }
+  .kitchen-categories a { padding: .35em .2em; }
+  .kitchen-categories::before { inset: -1.2rem -.8rem -1.5rem; }
+  .kitchen::after { width: 11%; }
+}
+@media (width <= 21rem) {
+  .kitchen-categories { grid-template-columns: repeat(2, 1fr); row-gap: .4em; }
+  .kitchen-categories li:nth-child(odd) { border-left: 0; }
+}

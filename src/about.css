@@ -1,0 +1,140 @@
+.hero {
+  min-height: max(51.25vw, calc(100svh - var(--header-height)));
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: auto 0 0;
+  height: clamp(2rem, 7vw, 8rem);
+  background: linear-gradient(transparent, rgb(10 9 6 / 40%) 48%, var(--section-bg));
+  pointer-events: none;
+}
+.about {
+  position: relative;
+  z-index: 1;
+  overflow-x: clip;
+  display: grid;
+  grid-template-columns: 492fr 624fr;
+  gap: 3.2vw;
+  padding: 2.8vw 3vw 2.8vw 6.7vw;
+  color: #f5e8cd;
+  background: var(--section-bg);
+  scroll-margin-top: var(--header-height);
+}
+.about::before, .about::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: clamp(4rem, 11vw, 13rem);
+  aspect-ratio: 405 / 341;
+  background: url("/images/about/leaves.webp") center / contain no-repeat;
+  mask-image: linear-gradient(to bottom, black 72%, transparent);
+  filter: blur(4px) brightness(.72);
+  pointer-events: none;
+}
+.about::before { bottom: 0; left: 0; opacity: .65; }
+.about::after { top: 0; right: 0; translate: 0 -30%; transform: rotate(180deg); }
+.about-gallery {
+  display: grid;
+  grid-template-columns: 292fr 185fr;
+  grid-template-rows: 1.23fr 1fr;
+  gap: 1.1vw;
+}
+.about-gallery picture {
+  grid-row: span 2;
+  min-width: 0;
+  min-height: 0;
+  contain: size;
+}
+.about-gallery img {
+  contain: size;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  border: 1px solid #38291c;
+  border-radius: .95vw;
+  object-fit: cover;
+}
+.about-gallery > img:nth-child(2) { object-position: center 25%; }
+.about-copy { display: flex; flex-direction: column; }
+.about-kicker {
+  display: flex;
+  align-items: center;
+  gap: .8em;
+  color: var(--amber);
+  font-size: clamp(.8rem, 1.05vw, 1.4rem);
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.about-kicker::before, .about-features li::after {
+  content: "";
+  width: 3em;
+  height: 2px;
+  background: var(--amber);
+}
+.about h2 {
+  max-width: 25ch;
+  margin: .25em 0 .55em 1.6vw;
+  font: bold clamp(2rem, 3.2vw, 5rem)/.99 var(--serif);
+  text-wrap: balance;
+}
+.about h2::after {
+  content: "";
+  display: inline-block;
+  width: 2.5em;
+  height: .55em;
+  margin-left: .18em;
+  background: url("/images/about/flourish.jpg") center / contain no-repeat;
+  mix-blend-mode: lighten;
+}
+.about-description {
+  max-width: 62ch;
+  margin: 0 1.6vw 2vw;
+  font-size: clamp(.94rem, 1.14vw, 1.6rem);
+  line-height: 1.42;
+}
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25vw;
+  margin: auto 0 0;
+  padding: 0;
+  list-style: none;
+}
+.about-features li {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 9.8vw;
+  padding: 1.5vw;
+  border: 1px solid #493725;
+  border-radius: 1vw;
+  background: linear-gradient(90deg, #100a06ba, transparent 80%), var(--feature-image) right center / cover no-repeat, #120c07;
+  font: bold clamp(1rem, 1.45vw, 2rem)/1.09 var(--serif);
+}
+.about-features li::after { width: 2em; height: 1px; margin-top: .85em; }
+.about-interior { --feature-image: url("./assets/about/wood.jpg"); }
+.about-kitchen { --feature-image: url("./assets/about/kitchen.jpg"); }
+.about-bar { --feature-image: url("./assets/about/cocktail.jpg"); }
+
+@media (width <= 55rem) {
+  .about { grid-template-columns: 1fr; padding: 2rem var(--gutter); gap: 1.5rem; }
+  .about-gallery { aspect-ratio: 2 / 1; gap: .65rem; }
+  .about-gallery img, .about-features li { border-radius: .7rem; }
+  .about h2 { margin-left: 0; text-wrap: initial; }
+  .about-description { margin: 0 0 1.25rem; }
+  .about-features li { padding: .85rem; min-height: 6.5rem; }
+}
+@media (width <= 28rem) {
+  .about h2::after { width: 1.65em; }
+  .about-features { grid-template-columns: 1fr; gap: .5rem; }
+  .about-features li {
+    min-height: 5rem;
+    padding-inline: 1.2rem;
+    background-size: 100% 100%, auto 135%;
+  }
+}

@@ -1,0 +1,207 @@
+.reservation {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 46.2% minmax(0, 1fr);
+  align-content: start;
+  min-height: 56.25vw;
+  padding: 7.55vw 4.4vw 9.7vw 5.95vw;
+  scroll-margin-top: var(--header-height);
+  color: #f8efdf;
+  background: var(--section-bg);
+}
+.reservation-backdrop, .reservation::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.reservation-backdrop {
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.reservation::before {
+  content: "";
+  z-index: -1;
+  background: linear-gradient(var(--section-bg), transparent clamp(4rem, 9vw, 11rem)),
+              linear-gradient(to top, var(--section-bg), transparent clamp(4rem, 8vw, 10rem));
+}
+
+.reservation-copy { padding-right: 3vw; }
+.reservation-kicker {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  color: #f5af42;
+  font-size: 1.55vw;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.reservation-kicker::before {
+  content: "";
+  width: 3.6vw;
+  height: 2px;
+  background: currentColor;
+}
+.reservation h2 {
+  margin: 2.1vw 0 0;
+  font: bold 5.55vw/.89 var(--serif);
+  letter-spacing: -.015em;
+}
+.reservation h2::after, .reservation-numbers::after {
+  content: "";
+  display: block;
+  width: 54%;
+  aspect-ratio: 7.3;
+  margin: -1.1vw 0 0 27%;
+  background: url("/images/reservation/title-stroke.svg") center / contain no-repeat;
+}
+.reservation-description {
+  max-width: 36.8vw;
+  margin: 1.25vw 0 0 .55vw;
+  font-size: 1.52vw;
+  line-height: 1.39;
+}
+.delivery-card {
+  display: flex;
+  align-items: center;
+  gap: 1.45vw;
+  min-height: 10.55vw;
+  margin-top: 2.4vw;
+  padding: 1vw 1.6vw;
+  border: 1px solid #e7a33b;
+  border-radius: 1.55vw;
+  background: #1b110b url("/images/reservation/delivery.webp") right center / 100% 100% no-repeat;
+}
+.delivery-icon { width: 5.2vw; color: #f2a138; }
+.delivery-links {
+  display: grid;
+  justify-items: start;
+  gap: .4em;
+  padding: .35em 0 .35em 1.75vw;
+  border-left: 1px solid #d68a23;
+  font-size: 1.5vw;
+}
+.delivery-links a:first-child { font: bold 1.21em/1.2 var(--serif); }
+.delivery-links a:last-child { color: #ffe2a3; text-decoration: underline; text-underline-offset: .26em; }
+.delivery-links a:hover, .reservation-numbers a:hover { color: #ffba54; }
+
+.reservation-details {
+  position: relative;
+  margin-top: .8vw;
+  padding-left: 3vw;
+}
+.reservation-details::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 1px;
+  background: linear-gradient(#754507, #eca52d 22% 80%, transparent);
+}
+.reservation-details h3 {
+  display: flex;
+  align-items: center;
+  gap: 1.4vw;
+  margin: 0 0 2.8vw .55vw;
+  font-size: 1.52vw;
+  font-weight: 400;
+}
+.reservation-details h3::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, #f5a422 65%, transparent);
+}
+.reservation-checklist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.55vw 1.7vw;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.reservation-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 1.5vw;
+  min-height: 4.9vw;
+  padding: .6em 1.8vw;
+  border: 1.5px solid #f4e4c8;
+  border-radius: 1.1vw;
+  font-size: 1.48vw;
+}
+.reservation-checklist li:last-child { grid-column: 1 / -1; }
+.reservation-checklist svg, .reservation-cta svg {
+  flex: none;
+  width: 2.2vw;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.reservation-checklist li:last-child svg { width: 2.8vw; }
+.reservation-call { margin: 3.15vw 2.7vw 0; text-align: center; }
+.reservation-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.45vw;
+  min-height: 6.1vw;
+  padding: .45em .7em;
+  border: 1px solid #f7b54d;
+  border-radius: 100vw;
+  color: #201407;
+  background: radial-gradient(ellipse at 50% 15%, #f6b856, #df8d30);
+  font: bold 2.35vw/1.1 var(--serif);
+}
+.reservation-cta:hover { background: #f7b456; }
+.reservation-cta svg { width: 2.5vw; }
+.reservation-numbers {
+  margin-top: 1.55vw;
+  font: 2.28vw/1.25 var(--serif);
+}
+.reservation-numbers a { display: inline-block; white-space: nowrap; }
+.reservation-numbers a + a {
+  margin-left: 2.35vw;
+  padding-left: 2.55vw;
+  border-left: 2px solid #db951e;
+}
+.reservation-numbers::after {
+  width: 63%;
+  aspect-ratio: 15;
+  margin: .6vw auto 0;
+  background-image: url("/images/reservation/call-stroke.svg");
+}
+
+@media (width <= 62rem) {
+  .reservation {
+    grid-template-columns: minmax(0, 40rem);
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 4rem var(--gutter) 6rem;
+  }
+  .reservation-copy { padding: 0; }
+  .reservation-kicker { gap: .75rem; font-size: 1rem; }
+  .reservation-kicker::before { width: 2.5rem; }
+  .reservation h2 { margin-top: 1.3rem; font-size: clamp(2.4rem, 9vw, 5rem); }
+  .reservation h2::after { width: min(48%, 15rem); margin: -.55rem 0 0 18%; }
+  .reservation-description { max-width: 34rem; margin: 1.25rem 0 0; font-size: 1.125rem; }
+  .reservation-description br { display: none; }
+  .delivery-card { min-height: clamp(6rem, 21vw, 10.5rem); margin-top: 1.5rem; padding: 1rem; gap: .85rem; border-radius: 1rem; }
+  .delivery-icon { width: clamp(2rem, 7vw, 4rem); }
+  .delivery-links { padding-left: .85rem; font-size: clamp(.95rem, 2.5vw, 1.25rem); }
+  .reservation-details { margin: 0; padding: 0; }
+  .reservation-details::before { display: none; }
+  .reservation-details h3 { gap: .85rem; margin: 0 0 1.25rem; font-size: 1.125rem; }
+  .reservation-checklist { gap: .75rem; }
+  .reservation-checklist li { gap: .7rem; min-height: 3.5rem; padding: .65rem .8rem; border-radius: .75rem; font-size: 1rem; }
+  .reservation-checklist svg, .reservation-cta svg { width: 1.5rem; }
+  .reservation-checklist li:last-child svg { width: 1.85rem; }
+  .reservation-call { margin: 1.75rem 0 0; }
+  .reservation-cta { gap: .7rem; min-height: 3.75rem; font-size: clamp(1.3rem, 4vw, 2rem); }
+  .reservation-numbers { margin-top: 1.25rem; font-size: clamp(1.15rem, 3.5vw, 1.75rem); }
+  .reservation-numbers a + a { margin-left: .55em; padding-left: .7em; }
+  .reservation-numbers::after { width: min(60%, 17rem); margin-top: .4rem; }
+}

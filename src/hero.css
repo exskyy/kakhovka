@@ -1,0 +1,210 @@
+.hero {
+  grid-area: 2 / 1;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 51.25vw;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: calc(1.6 * var(--header-height));
+  background: linear-gradient(to bottom, rgb(18 14 10 / 64%), transparent);
+  pointer-events: none;
+}
+.hero-collage {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.photo {
+  --frame: 1.5px;
+  position: absolute;
+  overflow: hidden;
+  background: linear-gradient(155deg, #e0aa70, #835129 60%, #714325);
+  clip-path: var(--cut);
+}
+.photo img {
+  display: block;
+  position: absolute;
+  inset: var(--frame);
+  width: calc(100% - 2 * var(--frame));
+  height: calc(100% - 2 * var(--frame));
+  object-fit: cover;
+  clip-path: var(--cut);
+}
+.lounge img { object-position: center 47%; }
+.dining-room img { object-position: center 21%; }
+.hero-collage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+@media (width > 64rem) and (min-aspect-ratio: 3/2) {
+  .hero::after { top: calc(-1 * var(--header-height)); }
+  .hero-collage {
+    /* Все вырезанные слои используют одну систему координат исходного коллажа. */
+    inset: calc(-1 * var(--header-height)) auto auto 0;
+    height: calc(100% + var(--header-height));
+    min-width: 100%;
+    aspect-ratio: 1672 / 941;
+    background: url("/images/hero/layers/01-wall.webp") center / cover no-repeat;
+  }
+  .lounge, .dining-room { top: 0; }
+  .lounge {
+    --cut: polygon(11.3% 0, 100% 0, 89% 100%, 0 100%);
+    left: 35.75%;
+    width: 40.7%;
+    height: calc(91.5% + var(--header-height) * .085);
+  }
+  .dining-room {
+    --cut: polygon(16.5% 0, 100% 0, 100% 100%, 0 100%);
+    right: -1.5px;
+    width: calc(29.9% + 1.5px);
+    height: calc(61.5% + var(--header-height) * .385);
+  }
+  .lounge img, .dining-room img { filter: brightness(.88) saturate(1.08); }
+  .lounge img { object-position: center 18%; }
+  .lounge::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 40% 36% at 12% 27%, rgb(0 0 0 / 72%), transparent 90%);
+  }
+  .exterior {
+    --cut: none;
+    --frame: 0px;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+  }
+  .exterior img {
+    object-fit: cover;
+  }
+  .hero-collage::after {
+    background: url("/images/hero/layers/foreground.webp") center / 100% 100% no-repeat;
+  }
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  padding: clamp(3.25rem, 5.3vw, 8rem) var(--gutter) clamp(6rem, 18vw, 24rem);
+}
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 2.4vw;
+  color: var(--amber);
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .075em;
+}
+.kicker::after {
+  height: 1px;
+  background: currentColor;
+  content: "";
+  width: 11vw;
+}
+h1 {
+  margin: .095em 0 .12em -.025em;
+  font-size: clamp(5rem, 9.65vw, 13rem);
+  line-height: .98;
+  transform: scaleX(.91);
+  transform-origin: left center;
+}
+.tagline {
+  font: italic clamp(1.8rem, 2.84vw, 3.8rem)/1.12 var(--serif);
+  letter-spacing: -.035em;
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 1.8vw; margin-top: clamp(2rem, 2.95vw, 4rem); }
+.hero-actions .button {
+  padding: .85em 2.25em;
+  min-height: clamp(3rem, 3.9vw, 5rem);
+  font-size: clamp(.875rem, 1.2vw, 1.5rem);
+}
+.primary { background: #d58e39; border-color: #d58e39; color: #1b140d; }
+.secondary { min-width: 10.8vw; }
+
+@media (width <= 64rem), (aspect-ratio < 3/2) {
+  .hero {
+    display: grid;
+    align-items: center;
+    min-height: clamp(23rem, 45vw, 36rem);
+    background: #201a13 url("/images/hero/layers/01-wall.webp") left center / cover;
+  }
+  .lounge {
+    --cut: polygon(14% 0, 100% 0, 100% 100%, 0 100%);
+    inset: 0 0 0 auto;
+    width: 53%;
+  }
+  .lounge img { object-position: 50% 47%; }
+  .dining-room, .exterior { display: none; }
+  .hero-copy {
+    width: 53%;
+    padding: clamp(2rem, 6vw, 5rem) 1rem clamp(2rem, 6vw, 5rem) var(--gutter);
+  }
+  h1 { font-size: clamp(3rem, 9.25vw, 8.5rem); margin-block: .17em; }
+  .kicker { gap: 1rem; }
+  .kicker::after { width: clamp(2rem, 7vw, 6rem); }
+  .tagline { font-size: clamp(1.5rem, 3.25vw, 3.3rem); }
+  .hero-actions { gap: .75rem; margin-top: clamp(1.5rem, 3vw, 2.5rem); }
+  .hero-actions .button { padding-inline: clamp(.9rem, 2vw, 1.75rem); }
+}
+
+@media (width <= 42rem) and (min-height: 30rem), (width <= 35rem),
+       (width <= 64rem) and (max-aspect-ratio: 4/5) {
+  .hero {
+    align-items: stretch;
+    grid-template-rows: minmax(clamp(12rem, 38svh, 32rem), 1fr) auto;
+  }
+  .hero-collage {
+    position: relative;
+    grid-row: 1;
+  }
+  .lounge {
+    --cut: none;
+    --frame: 0px;
+    inset: 0;
+    width: 100%;
+  }
+  .lounge img { object-position: center 52%; }
+  .hero-copy {
+    grid-row: 2;
+    isolation: isolate;
+    width: 100%;
+    padding: clamp(1.25rem, 4vw, 2.25rem) var(--gutter) max(clamp(1.75rem, 5svh, 3.5rem), env(safe-area-inset-bottom));
+  }
+  .hero-copy::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0 0 -5rem;
+    transform: skewY(-3deg);
+    transform-origin: left top;
+    border-top: 1px solid #ae8051;
+    background: #201a13 url("/images/hero/layers/01-wall.webp") left bottom / cover;
+  }
+  h1 { font-size: clamp(3rem, 17.5vw, 7.5rem); }
+  .tagline { font-size: clamp(1.65rem, 6.15vw, 2.7rem); }
+  .hero-actions .button { padding-inline: clamp(.9rem, 5vw, 2rem); }
+}
+
+@media (width <= 23rem) {
+  .tagline br { display: none; }
+  .tagline { text-wrap: balance; }
+  .hero-actions .button { padding-inline: .8rem; font-size: .8rem; }
+}
+
+@media (35rem < width <= 64rem) and (height < 30rem) {
+  .hero { min-height: auto; }
+  .hero-copy { padding-block: 1.25rem; }
+  .hero-actions { margin-top: 1rem; gap: .5rem; }
+  .hero-actions .button { min-height: 44px; padding-inline: .75rem; font-size: .8rem; }
+}
+

@@ -1,0 +1,84 @@
+.contacts {
+  display: grid;
+  grid-template-columns: minmax(0, 324fr) minmax(0, 359fr) minmax(0, 458fr);
+  align-items: end;
+  padding: 6.6vw 5vw 2.75vw 5.85vw;
+  scroll-margin-top: var(--header-height);
+  color: #f4e4c7;
+  background: linear-gradient(var(--section-bg), #1b110b 50%, var(--section-bg));
+  font-size: clamp(1rem, 1.35vw, 1.75rem);
+  line-height: 1.4;
+}
+.contacts-intro { padding-right: 1.65vw; }
+.contacts-kicker {
+  display: flex;
+  align-items: center;
+  gap: 1.1vw;
+  color: #f4a023;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.contacts-kicker::before { content: ""; width: 2.4vw; height: 2px; background: currentColor; }
+.contacts h2 {
+  margin: 1.45vw 0;
+  font: bold clamp(2.4rem, 4vw, 6rem)/.94 var(--serif);
+}
+.contacts h2::after {
+  content: "";
+  display: block;
+  width: 66%;
+  aspect-ratio: 7.3;
+  margin: .65vw 0 0 15%;
+  background: url("/images/reservation/title-stroke.svg") center / contain no-repeat;
+}
+.contacts-socials { display: flex; gap: 1.8vw; margin-top: 1.7vw; }
+.contacts-socials a, .contacts-icon {
+  display: grid;
+  place-items: center;
+  width: max(3.9vw, 44px);
+  border: 1px solid #d9bd8e;
+  border-radius: .7em;
+}
+.contacts-socials a { min-height: max(3.45vw, 44px); }
+.contacts-socials a:hover { color: #161009; background: var(--cream); }
+.contacts-socials svg { width: 52%; fill: currentColor; }
+.contacts-details {
+  --icon-size: max(4vw, 44px);
+  display: grid;
+  gap: 2.4vw;
+  margin: 0 0 .55vw;
+  padding: .8vw 1.2vw 1.15vw 2.35vw;
+  border-left: 1px solid #a3691b;
+}
+.contacts-details > div { position: relative; padding-left: calc(var(--icon-size) + 1.5vw); }
+.contacts-details dt { font: bold 1.28em/1.2 var(--serif); }
+.contacts-details dd { margin: .2em 0 0; }
+.contacts-details a:hover { color: var(--amber); text-decoration: underline; }
+.contacts-icon { position: absolute; top: 0; left: 0; width: var(--icon-size); height: var(--icon-size); border-radius: .55em; }
+.contacts-icon svg { width: 52%; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.contacts-map {
+  display: block;
+  width: 100%;
+  aspect-ratio: 458 / 312;
+  border: 1px solid #d2b991;
+  border-radius: 1.45vw;
+  background: #20190f;
+}
+
+@media (width <= 62rem) {
+  .contacts { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 2rem; padding: 4rem var(--gutter) 3rem; }
+  .contacts-kicker { gap: .75rem; }
+  .contacts-kicker::before { width: 2rem; }
+  .contacts h2 { margin: 1.25rem 0; }
+  .contacts h2::after { width: 10rem; margin: .5rem 0 0 2rem; }
+  .contacts-socials { gap: 1rem; margin-top: 1.25rem; }
+  .contacts-details { gap: 1.5rem; margin: 0; padding: .5rem 0 .5rem 1.25rem; }
+  .contacts-map { grid-column: 1 / -1; height: 20rem; border-radius: 1rem; }
+}
+@media (width <= 40rem) {
+  .contacts { grid-template-columns: minmax(0, 1fr); }
+  .contacts-intro { padding: 0; }
+  .contacts-details { padding: 1.5rem 0 0; border: 0; border-top: 1px solid #a3691b; }
+  .contacts-details > div { padding-left: calc(var(--icon-size) + 1rem); }
+  .contacts-map { height: clamp(16rem, 65vw, 20rem); }
+}

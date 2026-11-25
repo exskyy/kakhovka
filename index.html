@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'; object-src 'none'; base-uri 'none'">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#14110d">
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="150x150">
+    <title>Каховка — гастропаб в Орле</title>
+    <meta name="description" content="Гастропаб «Каховка» в Орле, ул. Тургенева, 16. Еда, разговоры, музыка — всё как надо. Забронировать стол по телефону +7 (4862) 44-53-63.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:title" content="Каховка">
+    <meta property="og:description" content="Еда, разговоры, музыка — всё как надо. Орёл, ул. Тургенева, 16.">
+    <link rel="stylesheet" href="/src/styles.css">
+    <script type="module" src="/src/navigation.js"></script>
+    <script type="module" src="/src/menu.js"></script>
+    <script type="module" src="/src/text-reveal.js"></script>
+  </head>
+  <body class="first-screen" id="home">
+    <a class="skip-link" href="#main">К основному содержанию</a>
+    <header class="header">
+      <a class="brand" href="#home" aria-label="Каховка — на главную">Каховка</a>
+      <span class="header-rule" aria-hidden="true"></span>
+      <button class="nav-toggle" type="button" aria-controls="navigation" aria-expanded="false" hidden>
+        Навигация <span class="hamburger" aria-hidden="true"></span>
+      </button>
+      <nav class="navigation" id="navigation" aria-label="Основная навигация">
+        <a href="#about">О нас</a>
+        <a href="#menu">Меню</a>
+        <a role="link" aria-disabled="true">Галерея</a>
+        <a href="#contacts">Контакты</a>
+        <a class="button header-booking" href="tel:+74862445363" aria-label="Забронировать стол по телефону">Забронировать</a>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-collage">
+          <div class="photo lounge">
+            <picture>
+              <source type="image/avif" srcset="/images/hero/lounge-480.avif 480w, /images/hero/lounge-853.avif 853w" sizes="(max-width: 42rem) 100vw, (max-width: 64rem) 53vw, 41vw">
+              <img src="/images/hero/стол_диван_стулья.webp" srcset="/images/hero/lounge-480.webp 480w, /images/hero/стол_диван_стулья.webp 853w" sizes="(max-width: 42rem) 100vw, (max-width: 64rem) 53vw, 41vw" alt="Деревянный стол у окна и кожаный диван под тёплыми подвесными лампами" width="853" height="1280" fetchpriority="high">
+            </picture>
+          </div>
+          <div class="photo dining-room">
+            <img src="/images/hero/интерьер.webp" srcset="/images/hero/dining-480.webp 480w, /images/hero/интерьер.webp 853w" sizes="(max-width: 55rem) 38vw, 30vw" alt="Зал гастропаба с яркими картинами и подвесными светильниками" width="853" height="1280" loading="lazy">
+          </div>
+          <div class="photo exterior">
+            <img src="/images/hero/layers/facade.webp" alt="Вывеска «Каховка» над открытой верандой гастропаба" width="1672" height="941" loading="lazy">
+          </div>
+        </div>
+        <div class="hero-copy">
+          <p class="kicker" data-reveal>Гастропаб · Орёл</p>
+          <h1 id="hero-title" data-reveal>Каховка</h1>
+          <p class="tagline" data-reveal>Еда, разговоры, музыка —<br> всё как надо.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="tel:+74862445363" aria-label="Забронировать стол по телефону">Забронировать</a>
+            <a class="button secondary" href="#menu">Меню</a>
+          </div>
+        </div>
+      </section>
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div class="about-gallery" id="gallery">
+          <picture>
+            <source type="image/avif" srcset="/images/hero/lounge-480.avif 480w, /images/hero/lounge-853.avif 853w" sizes="(max-width: 42rem) 100vw, (max-width: 64rem) 53vw, 41vw">
+            <img src="/images/hero/стол_диван_стулья.webp" srcset="/images/hero/lounge-480.webp 480w, /images/hero/стол_диван_стулья.webp 853w" sizes="(max-width: 42rem) 100vw, (max-width: 64rem) 53vw, 41vw" alt="Стол и кожаный диван у окна" loading="lazy">
+          </picture>
+          <img src="/images/hero/интерьер.webp" srcset="/images/hero/dining-480.webp 480w, /images/hero/интерьер.webp 853w" sizes="(max-width: 55rem) 38vw, 30vw" alt="Картины в зале гастропаба" loading="lazy">
+          <img id="bar" src="/images/about/bar.webp" srcset="/images/about/bar-540.webp 540w, /images/about/bar.webp 853w" sizes="(max-width: 55rem) 38vw, 15vw" alt="Барная стойка с полками напитков" loading="lazy">
+        </div>
+        <div class="about-copy">
+          <p class="about-kicker" data-reveal>О гастропабе</p>
+          <h2 id="about-title" data-reveal>Атмосфера, в которую хочется вернуться</h2>
+          <p class="about-description" data-reveal>«Каховка» — гастропаб, где встречаются уютный интерьер, насыщенная кухня и живая вечерняя атмосфера. Это место для тех, кто ценит вкусную еду, хорошие напитки и пространство, в котором комфортно провести и спокойный ужин, и насыщенный вечер.</p>
+          <ul class="about-features">
+            <li class="about-interior"><span data-reveal>Интерьер<br> с характером</span></li>
+            <li class="about-kitchen"><span data-reveal>Авторская<br> кухня</span></li>
+            <li class="about-bar"><span data-reveal>Барная<br> культура</span></li>
+          </ul>
+        </div>
+      </section>
+      <section class="kitchen" id="kitchen" aria-labelledby="kitchen-title">
+        <div class="kitchen-copy">
+          <p class="about-kicker kitchen-kicker" data-reveal>Наша кухня</p>
+          <h2 id="kitchen-title" data-reveal>Кухня</h2>
+          <p class="kitchen-description" id="kitchen-description" data-reveal>Современная гастропаб-кухня с акцентом на вкус, качественные продукты и интересные сочетания. Знакомые блюда в авторском прочтении и сезонные позиции, которые хочется попробовать.</p>
+          <div class="kitchen-actions">
+            <a class="button primary" href="#menu">Смотреть меню <span aria-hidden="true">→</span></a>
+            <a href="#menu">О кухне</a>
+          </div>
+        </div>
+        <div class="kitchen-gallery">
+          <div class="kitchen-photo kitchen-main-photo">
+            <img src="/images/kitchen/braised-beef.webp" srcset="/images/kitchen/braised-beef-800.webp 800w, /images/kitchen/braised-beef.webp 1600w" sizes="(max-width: 56rem) 95vw, 63vw" width="1600" height="865" alt="Томлёное мясо с пюре, запечённой морковью и зеленью" loading="lazy">
+          </div>
+          <div class="kitchen-photo kitchen-burger">
+            <img src="/images/kitchen/burger.webp" width="800" height="457" alt="Бургер с сыром и картофелем фри" loading="lazy">
+          </div>
+          <div class="kitchen-photo kitchen-salad">
+            <img src="/images/kitchen/shrimp-salad.webp" width="720" height="480" alt="Салат с креветками, томатами и свежей зеленью" loading="lazy">
+          </div>
+        </div>
+        <ul class="kitchen-categories" aria-label="Категории кухни">
+          <li><a href="#menu">Закуски</a></li>
+          <li><a href="#menu">Салаты</a></li>
+          <li><a href="#menu">Горячее</a></li>
+          <li><a href="#menu">Десерты</a></li>
+        </ul>
+      </section>
+      <section class="food-menu" id="menu" aria-labelledby="menu-title">
+        <header class="menu-heading">
+          <p>Гастропаб «Каховка»</p>
+          <h2 id="menu-title">Кухня со вкусом</h2>
+        </header>
+        <div class="menu-frame">
+          <p id="menu-status" role="status"></p>
+          <noscript>Для загрузки меню включите JavaScript.</noscript>
+          <div id="menu-filters" aria-label="Категории меню" role="group" hidden></div>
+          <div class="menu-groups" id="menu-groups"></div>
+          <button class="menu-action" id="menu-expand" type="button" aria-expanded="false" aria-controls="menu-groups" hidden>Развернуть полное меню ↓</button>
+          <button class="menu-action" id="menu-retry" type="button" hidden>Попробовать ещё раз</button>
+        </div>
+        <img class="menu-foliage" src="/images/about/menu-ficus.webp" width="960" height="640" alt="" loading="lazy">
+      </section>
+      <section class="reasons" id="reasons" aria-labelledby="reasons-title">
+        <header class="reasons-heading">
+          <h2 id="reasons-title">Почему выбирают Каховку</h2>
+          <p>Место, где сочетаются вкусная кухня, качественные напитки и особая атмосфера.</p>
+        </header>
+        <ul class="reasons-list">
+          <li>
+            <img src="/images/reasons/icon-kitchen.webp" width="318" height="318" alt="" loading="lazy">
+            <h3>Авторская<br> кухня</h3>
+            <p>Знакомые блюда<br> в новом прочтении</p>
+          </li>
+          <li>
+            <img src="/images/reasons/icon-drinks.webp" width="318" height="318" alt="" loading="lazy">
+            <h3>Большой<br> выбор напитков</h3>
+            <p>От классики<br> до авторских коктейлей</p>
+          </li>
+          <li>
+            <img src="/images/reasons/icon-atmosphere.webp" width="318" height="318" alt="" loading="lazy">
+            <h3>Атмосфера<br> для любого повода</h3>
+            <p>Встречи, ужины,<br> вечеринки</p>
+          </li>
+          <li>
+            <img src="/images/reasons/icon-location.webp" width="318" height="318" alt="" loading="lazy">
+            <h3>Удобное<br> расположение</h3>
+            <p>В самом центре города</p>
+          </li>
+        </ul>
+      </section>
+      <section class="reservation" id="reservation" aria-labelledby="reservation-title">
+        <img class="reservation-backdrop" src="/images/reservation/backdrop.webp" width="1672" height="941" alt="" loading="lazy">
+        <div class="reservation-copy">
+          <p class="reservation-kicker">Бронирование</p>
+          <h2 id="reservation-title">Забронировать<br> стол</h2>
+          <p class="reservation-description">Позвоните нам, чтобы быстро забронировать<br> стол и выбрать удобное время для вашего<br> визита.</p>
+          <div class="delivery-card">
+            <svg class="delivery-icon" aria-hidden="true" viewBox="0 0 64 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 35a21 21 0 0 1 42 0ZM14 36h47v5H14zM8 24h7M3 30h9M1 36h8M23 29a15 15 0 0 1 9-10"/>
+              <circle cx="38" cy="11" r="3"/>
+            </svg>
+            <div class="delivery-links">
+              <a href="tel:+74862303407">Доставка: 303-407</a>
+              <a href="https://eda.khvk.ru/">eda.khvk.ru</a>
+            </div>
+          </div>
+        </div>
+        <div class="reservation-details">
+          <h3>Что понадобится для брони стола</h3>
+          <ul class="reservation-checklist">
+            <li>
+              <svg aria-hidden="true" viewBox="0 0 32 32"><circle cx="16" cy="9" r="6"/><path d="M3 28v-2c0-6 6-10 13-10s13 4 13 10v2z"/></svg>
+              Имя
+            </li>
+            <li>
+              <svg aria-hidden="true" viewBox="0 0 32 32"><path id="reservation-handset" d="M6 3c1-1 2-1 3 0l4 5c1 1 .6 2-.4 3l-2.4 2.2c1.6 3.7 5 7.2 8.7 8.9l2.4-2.6c.8-.9 2-1.1 3-.4l4.6 3.4c1.2.8 1.3 2.1.5 3.3l-1.8 2.5c-1.5 2-4.7 2.1-7.7.8C12.3 26 5.4 18.8 2.9 11.4 1.8 8.2 2.5 6 4 4.6z"/></svg>
+              Телефон
+            </li>
+            <li>
+              <svg aria-hidden="true" viewBox="0 0 32 32"><rect x="3" y="6" width="26" height="23" rx="2"/><path d="M3 12h26M10 3v6m12-6v6M9 18h1m6 0h1m6 0h1M9 23h1m6 0h1m6 0h1"/></svg>
+              Дата
+            </li>
+            <li>
+              <svg aria-hidden="true" viewBox="0 0 32 32"><circle cx="16" cy="16" r="13.5"/><path d="M16 7v9l7 4"/></svg>
+              Время
+            </li>
+            <li>
+              <svg aria-hidden="true" viewBox="0 0 40 32"><circle cx="20" cy="10" r="6"/><path d="M10 28v-2a10 10 0 0 1 20 0v2M10 8a4 4 0 1 0 0 8M30 8a4 4 0 1 1 0 8M2 26v-2a7 7 0 0 1 7-7m29 9v-2a7 7 0 0 0-7-7"/></svg>
+              Количество гостей
+            </li>
+          </ul>
+          <div class="reservation-call">
+            <a class="reservation-cta" href="tel:+74862445363">
+              <svg aria-hidden="true" viewBox="0 0 32 32"><use href="#reservation-handset"/></svg>
+              Позвонить для брони
+            </a>
+            <div class="reservation-numbers">
+              <a href="tel:+74862445363">44-53-63</a>
+              <a href="tel:+74862445363">+7 486 244 53 63</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contacts" id="contacts" aria-labelledby="contacts-title">
+        <div class="contacts-intro">
+          <p class="contacts-kicker">Контакты</p>
+          <h2 id="contacts-title">Как с нами<br> связаться</h2>
+          <p class="contacts-welcome">Ждём вас в ресторане «Каховка» — на хорошем ужине, бокале вина и приятной атмосфере.</p>
+          <div class="contacts-socials">
+            <a href="https://vk.ru/kakhovkabar" aria-label="Каховка во ВКонтакте">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path id="social-vk" d="M13.2 18.5C5 18.5 1 12.8.8 5.5h3.9c.2 5.3 2.6 8.1 4.5 8.7V5.5h3.7v5c2-.2 4.2-2.8 4.9-5h3.7a11.5 11.5 0 0 1-4.6 6.4c2.1 1.1 4.6 3.5 5.5 6.6h-4.1c-.8-2.2-2.7-4.4-5.4-4.7v4.7z"/></svg>
+            </a>
+            <a href="https://t.me/kakhovka_rest" aria-label="Каховка в Telegram">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path id="social-telegram" d="M21.7 3.3c.6-.2 1 .2.9 1l-3 15.5c-.2.9-.7 1.1-1.5.6l-6.6-4.9 7.4-7.1c.4-.4.1-.6-.4-.3l-9.3 5.8-4.1-1.3c-.9-.3-.9-.9.2-1.3z"/></svg>
+            </a>
+          </div>
+        </div>
+        <dl class="contacts-details">
+          <div>
+            <dt><span class="contacts-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><g id="contact-pin"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.8"/></g></svg></span>Адрес</dt>
+            <dd><a href="https://yandex.ru/maps/org/kakhovka/1297017577/">ул. Тургенева, 16, Орёл</a></dd>
+          </div>
+          <div>
+            <dt><span class="contacts-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#reservation-handset"/></svg></span>Телефон</dt>
+            <dd><a href="tel:+74862445363">+7 (4862) 44-53-63</a></dd>
+          </div>
+          <div>
+            <dt><span class="contacts-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><g id="contact-clock"><circle cx="12" cy="12" r="10"/><path d="M12 5.5V12l4.5 2.5"/></g></svg></span>Режим работы</dt>
+            <dd>Пн – Чт: 12:00 – 00:00<br>Пт – Сб: 12:00 – 02:00<br>Вс: 12:00 – 00:00</dd>
+          </div>
+        </dl>
+        <iframe class="contacts-map" title="Гастропаб «Каховка» на Яндекс Картах" src="https://yandex.ru/map-widget/v1/?oid=1297017577&amp;ol=biz&amp;z=17&amp;theme=dark" loading="lazy" allowfullscreen></iframe>
+      </section>
+    </main>
+    <footer class="site-footer" aria-label="Гастропаб «Каховка»">
+      <div class="footer-main">
+        <div class="footer-identity">
+          <a class="footer-logo" href="#home" aria-label="Каховка — в начало страницы">
+            <span>Каховка</span>
+            <small>Гастропаб · Орёл</small>
+          </a>
+          <p class="footer-tagline">Еда, разговоры, музыка —<br> всё как надо.</p>
+          <div class="footer-socials">
+            <a class="footer-icon" href="https://vk.ru/kakhovkabar" aria-label="Каховка во ВКонтакте"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#social-vk"/></svg></a>
+            <a class="footer-icon" href="https://t.me/kakhovka_rest" aria-label="Каховка в Telegram"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#social-telegram"/></svg></a>
+          </div>
+        </div>
+        <nav class="footer-nav" aria-label="Навигация в подвале">
+          <a href="#about">О нас</a>
+          <a href="#menu">Меню</a>
+          <a href="#gallery">Галерея</a>
+          <a href="#bar">Бар</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+        <ul class="footer-contacts" aria-label="Контактная информация">
+          <li>
+            <span class="footer-icon"><svg aria-hidden="true" viewBox="0 0 32 32"><use href="#reservation-handset"/><path d="M19 4a12 12 0 0 1 9 9M19 9a7 7 0 0 1 5 5"/></svg></span>
+            <div><strong><a href="tel:+74862445363">44-53-63</a> &nbsp;/&nbsp; <a href="tel:+74862445363">+7 486 244 53 63</a></strong><small>Бронирование столов</small></div>
+          </li>
+          <li>
+            <span class="footer-icon"><img src="/images/footer/bag.svg" width="24" height="24" alt="" loading="lazy"></span>
+            <div><strong><a href="tel:+74862303407">303-407</a> &nbsp;/&nbsp; <a href="https://eda.khvk.ru/">eda.khvk.ru</a></strong><small>Доставка</small></div>
+          </li>
+          <li>
+            <span class="footer-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#contact-pin"/></svg></span>
+            <div><strong><a href="https://yandex.ru/maps/org/kakhovka/1297017577/">Орёл, ул. Тургенева, 16</a></strong><small>Мы в центре города</small></div>
+          </li>
+          <li>
+            <span class="footer-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#contact-clock"/></svg></span>
+            <p class="footer-hours"><b>Пн – Чт:</b> 12:00 – 00:00<br><b>Пт – Сб:</b> 12:00 – 02:00<br><b>Вс:</b> 12:00 – 00:00</p>
+          </li>
+        </ul>
+      </div>
+      <p class="footer-copyright">© 2026 Гастропаб «Каховка». Все права защищены.</p>
+    </footer>
+  </body>
+</html>

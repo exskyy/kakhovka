@@ -1,0 +1,127 @@
+.site-footer {
+  --footer-gold: #dfa346;
+  --footer-rule: #94631e;
+  --footer-icon: max(2.98vw, 44px);
+  --footer-fade: linear-gradient(var(--section-bg), transparent clamp(3rem, 6vw, 7rem));
+  padding: 4.55vw 8.95vw 3.7vw;
+  color: #f5e6c9;
+  background: var(--footer-fade), #0b0805 url("/images/footer/backdrop.webp") right center / cover no-repeat;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 38.4% 20.7% 1fr;
+}
+.footer-identity {
+  position: relative;
+  isolation: isolate;
+  padding-top: .8vw;
+}
+.footer-identity::before {
+  content: "К" / "";
+  position: absolute;
+  inset: -.95vw 4.1vw auto auto;
+  z-index: -1;
+  color: #753909;
+  opacity: .23;
+  font: italic 16vw/.9 var(--serif);
+  pointer-events: none;
+}
+.footer-logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--serif);
+  text-transform: uppercase;
+}
+.footer-logo span { font-size: max(3.55vw, 2.5rem); font-weight: 700; letter-spacing: -.04em; line-height: 1; }
+.footer-logo small { margin-top: .6vw; font-size: max(.9vw, .7rem); letter-spacing: .36em; }
+.footer-logo::after {
+  content: "";
+  align-self: start;
+  width: 72%;
+  aspect-ratio: 10;
+  margin-top: .85vw;
+  background: url("/images/reservation/title-stroke.svg") center / 100% 100% no-repeat;
+}
+.footer-tagline { margin: 1.8vw 0 1.6vw; font: italic max(1.66vw, 1.35rem)/1.2 var(--serif); }
+.footer-socials { display: flex; gap: max(1vw, .75rem); }
+.footer-icon {
+  display: grid;
+  place-items: center;
+  width: var(--footer-icon);
+  height: var(--footer-icon);
+  color: #f5e6c9;
+  border: 1.5px solid var(--footer-gold);
+  border-radius: 27%;
+}
+.footer-icon svg, .footer-icon img { width: 53%; height: 53%; }
+.footer-socials svg { fill: currentColor; }
+.footer-socials a:hover { background: var(--footer-gold); color: #160f06; }
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  margin: 1.15vw 0 .8vw;
+  padding: 0 1vw 1vw 4.65vw;
+  border-left: 1px solid var(--footer-rule);
+  font-size: max(1.16vw, .94rem);
+  text-transform: uppercase;
+}
+.footer-nav a:hover, .footer-contacts a:hover { color: var(--footer-gold); text-decoration: underline; }
+.footer-contacts {
+  display: grid;
+  align-content: space-between;
+  gap: 1.1vw;
+  margin: 0 0 .8vw;
+  padding: 0 0 0 4.65vw;
+  border-left: 1px solid var(--footer-rule);
+  list-style: none;
+}
+.footer-contacts li {
+  display: grid;
+  grid-template-columns: var(--footer-icon) minmax(0, 1fr);
+  gap: 2.1vw;
+  align-items: start;
+}
+.footer-contacts svg { fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.footer-contacts strong, .footer-hours { font: bold max(1.32vw, 1rem)/1.2 var(--serif); }
+.footer-contacts a { display: inline-block; }
+.footer-contacts small { display: block; margin-top: .27em; font-size: max(.98vw, .875rem); }
+.footer-hours { font-weight: 400; }
+.footer-copyright {
+  margin-top: 3.4vw;
+  padding-top: 2.2vw;
+  border-top: 1px solid var(--footer-rule);
+  font-size: max(.98vw, .875rem);
+  line-height: 1.45;
+}
+#gallery, #bar { scroll-margin-top: calc(var(--header-height) + 1rem); }
+
+@media (width <= 64rem) {
+  .site-footer { padding: 3rem var(--gutter) 2rem; }
+  .footer-main { grid-template-columns: 34% 19% 1fr; }
+  .footer-nav, .footer-contacts { padding-left: 2.2vw; }
+  .footer-contacts { gap: 1rem; }
+  .footer-contacts li { gap: 1rem; }
+  .footer-identity::before { right: 1rem; }
+  .footer-tagline { margin: 1.5rem 0; text-wrap: balance; }
+}
+
+@media (width <= 46rem) {
+  .site-footer {
+    background-image: var(--footer-fade), linear-gradient(to right, #0b0805d9 50%, #0b080566), url("/images/footer/backdrop.webp");
+    background-position: right center;
+    background-size: cover;
+  }
+  .footer-main { grid-template-columns: 1fr; gap: 1.75rem; }
+  .footer-identity::before { inset: -.4rem 6% auto auto; font-size: 10rem; }
+  .footer-logo small { margin-top: .45rem; }
+  .footer-logo::after { margin-top: .75rem; }
+  .footer-nav, .footer-contacts { margin: 0; padding: 1.3rem 0 0; border: 0; border-top: 1px solid var(--footer-rule); }
+  .footer-nav { flex-direction: row; flex-wrap: wrap; justify-content: start; gap: .25rem 1.25rem; }
+  .footer-nav a { padding-block: .4rem; }
+  .footer-contacts { gap: 1.1rem; }
+  .footer-copyright { margin-top: 1.75rem; padding-top: 1.25rem; }
+}
